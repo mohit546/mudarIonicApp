@@ -18,7 +18,9 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 
 	.state('app', {
 		url: '/app',
-		abstract: true
+		// abstract: true,
+		// templateUrl: 'templates/login.html',
+		controller: 'mudraAppCtrl'
 	})
 
 	.state('myAccount', {

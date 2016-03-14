@@ -9,6 +9,7 @@ angular.module('mudraApp.controllers', [])
 		scope: $scope
 	}).then(function(modal) {
 		$scope.modal = modal;
+		$scope.modal.show();
 	});
 
 	$scope.closeLogin = function() {
