@@ -1,4 +1,4 @@
-angular.module('mudraApp', ['ionic', 'mudraApp.controllers'])
+angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'])
 
 .run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
