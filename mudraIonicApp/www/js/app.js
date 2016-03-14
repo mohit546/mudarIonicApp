@@ -27,7 +27,8 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers'])
 		url: '/myAccount',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/myAccount.html'
+				templateUrl: 'templates/myAccount.html',
+				controller: 'myAccountCtrl'
 			}
 		}
 	})
