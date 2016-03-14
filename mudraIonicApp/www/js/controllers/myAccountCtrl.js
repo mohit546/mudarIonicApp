@@ -9,6 +9,14 @@ angular.module('mudraApp.controllers')
 
 	var getYearList = function(){
 		var dataPromis = networkService.getYearListRequest();
+		dataPromis.then(function(result){
+			console.log(result);
+			if(!result.status){
+				console.log(result.validation);
+			}else{
+				$scope.accountingYearList = result.AccYearsList;
+			}
+		});
 	};
 
 });
