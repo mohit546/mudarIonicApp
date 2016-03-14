@@ -18,12 +18,10 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 
 	.state('app', {
 		url: '/app',
-		abstract: true,
-		templateUrl: 'templates/menu.html',
-		controller: 'mudraAppCtrl'
+		abstract: true
 	})
 
-	.state('app.myAccount', {
+	.state('myAccount', {
 		url: '/myAccount',
 		views: {
 			'menuContent': {
@@ -33,7 +31,7 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		}
 	})
 
-	.state('app.accounts', {
+	.state('accounts', {
 		url: '/accounts',
 		views: {
 			'menuContent': {
@@ -42,7 +40,7 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		}
 	})
 
-	.state('app.editAccount', {
+	.state('editAccount', {
 		url: '/editAccount',
 		views: {
 			'menuContent': {
@@ -51,25 +49,23 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		}
 	})
 
-	.state('app.eventAccounting', {
+	.state('eventAccounting', {
 		url: '/eventAccounting',
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/eventAccounting.html',
-		  // controller: 'eventAccountingCtrl'
 			}
 		}
 	})
 
-	.state('app.activities', {
+	.state('activities', {
 		url: '/activities',
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/activities.html',
-		// controller: 'PlaylistCtrl'
 			}
 		}
 	});
 
-	$urlRouterProvider.otherwise('/app/myAccount');
+	$urlRouterProvider.otherwise('/app');
 });

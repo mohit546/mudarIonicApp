@@ -1,6 +1,7 @@
 angular.module('mudraApp.controllers', [])
 
 .controller('mudraAppCtrl', function($scope, $ionicModal, $timeout) {
+	console.log('mudraAppCtrl is loaded');
 
 	$scope.loginData = {};
 
