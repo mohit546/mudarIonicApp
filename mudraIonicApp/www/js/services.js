@@ -1,6 +1,13 @@
 angular.module('mudraApp.services', [])
-.constant('mudraServer', 'http://192.168.1.124:8000')
+.constant('mudraServer', '/mudra')
 .factory('networkService', function($http, mudraServer){
+
+
+	var loginRequest = function(name, password){
+		return $http.post(mudraServer + '/user_login/', {username: name, password: password}).then(function(result){
+			return result.data;
+		});
+	};
 
 	var getYearListRequest = function(){
 		return $http.get(mudraServer + '/list_of_accounting_years/').then(function(result){
@@ -10,6 +17,7 @@ angular.module('mudraApp.services', [])
 
 
 	return {
+		loginRequest : loginRequest,
 		getYearListRequest : getYearListRequest
 	};
 });

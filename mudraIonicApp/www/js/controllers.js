@@ -1,6 +1,6 @@
 angular.module('mudraApp.controllers', [])
 
-.controller('mudraAppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('mudraAppCtrl', function($scope, $ionicModal, $timeout, networkService, $http, $state) {
 	console.log('mudraAppCtrl is loaded');
 
 	$scope.loginData = {};
@@ -21,9 +21,17 @@ angular.module('mudraApp.controllers', [])
 	};
 
 	$scope.doLogin = function() {
-		console.log('Doing login', $scope.loginData);
-		$timeout(function() {
-			$scope.closeLogin();
-		}, 1000);
+		console.log('doLogin doLogin doLogin doLogin ');
+		var dataPromis = networkService.loginRequest($scope.loginData.username, $scope.loginData.password);
+		dataPromis.then(function(result){
+			console.log(result);
+			if(!result.status){
+				console.log(result.validation);
+			}else{
+				$scope.closeLogin();
+				$state.go('myAccount');
+			}
+		});
 	};
+
 });
