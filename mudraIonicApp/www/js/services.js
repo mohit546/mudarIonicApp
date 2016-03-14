@@ -15,9 +15,17 @@ angular.module('mudraApp.services', [])
 		});
 	};
 
+	var getAccountListRequest = function(pageno, entriesperpage){
+		return $http.post(mudraServer + '/show_account_details/', {pageNo: pageno, entriesPerPage: entriesperpage}).then(function(result){
+			return result.data;
+		});
+	};
+
+
 
 	return {
 		loginRequest : loginRequest,
-		getYearListRequest : getYearListRequest
+		getYearListRequest : getYearListRequest,
+		getAccountListRequest : getAccountListRequest
 	};
 });

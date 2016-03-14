@@ -1,5 +1,13 @@
 <ion-view view-title="Search">
 	<ion-content>
 		<h1>Accounts</h1>
+
+		<ul class="list">
+			<li class="item" ng-repeat="account in accountList" ui-sref="accounts">
+				<span>{{account.account_name}}</span>
+				<span style="float: right;">{{account.amount}}</span>
+			</li>
+		</ul>
 	</ion-content>
 </ion-view>
+
