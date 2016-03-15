@@ -1,32 +1,46 @@
 <ion-view view-title="Event Accounting">
 	<ion-content>
 
-		<div class="list list-inset">
+		<div class="list">
+
 			<ionic-datepicker input-obj="datepickerOptions">
 				<button class="button button-block button-stable"> {{datepickerOptions.inputDate | date:datepickerOptions.dateFormat}}</button>
 			</ionic-datepicker>
 
 			<label class="item item-input item-select">
-				<div class="input-label">&nbsp;</div>
-				<select>
+				<div class="input-label">
+					Transaction Mode
+				</div>
+				<select ng-options="type.type for type in transactionTypeOptions" ng-model="selectedTransactionTypeOptions">
+					<option value="">Select</option>
 				</select>
 			</label>
 
-				{{transactionTypeOptions}}
-			<div class="row" style="padding: 5px 0px;">
-				<label class="item item-input item-select col-50">
-					<div class="input-label">
-						&nbsp;
-					</div>
-					<select placeholder="" ng-options="type.type for type in transactionTypeOptions" ng-model="selectedTransactionTypeOptions" style="left: 0;">
-						<option value="">Select</option>
-					</select>
-				</label>
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Transaction Type
+				</div>
+				<select ng-options="type.type for type in transactionTypeOptions" ng-model="selectedTransactionTypeOptions">
+					<option value="">Select</option>
+				</select>
+			</label>
 
-				<label class="item item-input item-select col-50">
-					<ion-select ngOptions="type.type for type in transactionTypeOptions" ng-model="selectedTransactionTypeOptions"></ion-select>
-				</label>
-			</div>
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Account Name
+				</div>
+				<select ng-options="type.type for type in transactionTypeOptions" ng-model="selectedTransactionTypeOptions">
+					<option value="">Select</option>
+				</select>
+			</label>
+
+			<label class="item item-input">
+				<input type="text" placeholder="Amount">
+			</label>
+
+			<label class="item">
+				<input type="submit" class="button button-block button-stable">
+			</label>
 		</div>
 
 	</ion-content>
