@@ -1,7 +1,5 @@
 <ion-view view-title="My Account">
 	<ion-content>
-		<h1>My Account</h1>
-
 		<ul class="list">
 			<li class="item" ng-repeat="year in accountingYearList" ui-sref="accounts({date: year.start_date})">
 				<span class="">{{year.start_date | date: 'dd/MMM/yyyy'}}</span>

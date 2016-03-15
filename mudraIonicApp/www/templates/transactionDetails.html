@@ -1,15 +1,12 @@
-<ion-view view-title="Search">
+<ion-view view-title="Transactional Details">
 	<ion-content>
-		<h1>Transactional Details</h1>
 
-		<div class="card">
-			<ul class="list">
-				<li class="item" ng-repeat="account in accountList" ui-sref="transactionDetails({id: account.id, date: date})">
-					<span>{{account.account_name}}</span>
-					<span style="float: right; color: red;">{{account.amount}}</span>
-				</li>
-			</ul>
-		</div>
+		<ul class="list">
+			<li class="item" ng-repeat="account in accountList" ui-sref="transactionDetails({id: account.id, date: date})">
+				<span>{{account.account_name}}</span>
+				<span style="float: right; color: red;">{{account.amount}}</span>
+			</li>
+		</ul>
 
 		<div class="list card" ng-repeat="transaction in details.transactionList">
 <!-- item-avatar -->
