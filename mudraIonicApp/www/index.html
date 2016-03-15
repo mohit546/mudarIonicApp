@@ -40,11 +40,6 @@
 			<h1 class="title">Menu</h1>
 		</ion-header-bar>
 		<ion-content>
-			<div class="button-bar">
-				<button class="button button-positive">A+</button>
-				<button class="button button-dark">G+</button>
-				<button class="button button-assertive">Y+</button>
-			</div>
 			<ion-list>
 				<!-- <ion-item menu-close ng-click="login()"> -->
 				<ion-item menu-close="" href="#/myAccount">
@@ -69,9 +64,14 @@
 
 	<ion-nav-view></ion-nav-view>
 
-<!-- <ion-footer-bar class="bar-balanced">
-	<div class="title" style="text-align: center;">Footer</div>
-</ion-footer-bar> -->
+<ion-footer-bar class="bar-light">
+	<!-- <div class="title" style="text-align: center;">Footer</div> -->
+	<ion-pane class="button-bar">
+		<button class="button button-outline button-stable">A+</button>
+		<button class="button button-outline button-stable">G+</button>
+		<button class="button button-outline button-stable">Y+</button>
+	</ion-pane>
+</ion-footer-bar>
 </body>
 
 </html>
