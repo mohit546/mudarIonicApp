@@ -20,7 +20,7 @@
 <ion-side-menus enable-menu-with-back-views="false">
 
 	<ion-side-menu-content>
-		<ion-nav-bar class="bar-stable">
+		<ion-nav-bar class="bar-balanced">
 		<ion-nav-back-button>
 		</ion-nav-back-button>
 
@@ -33,25 +33,25 @@
 	</ion-side-menu-content>
 
 	<ion-side-menu side="left">
-		<ion-header-bar class="bar-stable">
+		<ion-header-bar class="bar-calm">
 			<h1 class="title">Menu</h1>
 		</ion-header-bar>
 		<ion-content>
 			<ion-list>
 				<!-- <ion-item menu-close ng-click="login()"> -->
-				<ion-item menu-close href="#/myAccount">
+				<ion-item menu-close="" href="#/myAccount">
 					My Account
 				</ion-item>
-				<ion-item menu-close href="#/accounts">
+				<ion-item menu-close="" href="#/accounts">
 					Accounts
 				</ion-item>
-				<ion-item menu-close href="#/editAccount">
+				<ion-item menu-close="" href="#/editAccount">
 					Edit Accounts
 				</ion-item>
-				<ion-item menu-close href="#/eventAccounting">
+				<ion-item menu-close="" href="#/eventAccounting">
 					Event Accounting
 				</ion-item>
-				<ion-item menu-close href="#/activities">
+				<ion-item menu-close="" href="#/activities">
 					Activities
 				</ion-item>
 			</ion-list>
@@ -59,6 +59,10 @@
 	</ion-side-menu>
 </ion-side-menus>
 	<ion-nav-view></ion-nav-view>
+
+<ion-footer-bar class="bar-balanced">
+	<div class="title" style="text-align: center;">Footer</div>
+</ion-footer-bar>
 </body>
 
 </html>
