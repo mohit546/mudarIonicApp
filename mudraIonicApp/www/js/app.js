@@ -58,6 +58,7 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/eventAccounting.html',
+				controller: 'eventAccountingCtrl'
 			}
 		}
 	})
