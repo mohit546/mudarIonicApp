@@ -47,7 +47,8 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		url: '/editAccount',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/editAccount.html'
+				templateUrl: 'templates/editAccount.html',
+				controller: 'editAccountCtrl'
 			}
 		}
 	})
