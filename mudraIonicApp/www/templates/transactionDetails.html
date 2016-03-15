@@ -1,0 +1,50 @@
+<ion-view view-title="Search">
+	<ion-content>
+		<h1>Transactional Details</h1>
+
+		<div class="card">
+			<ul class="list">
+				<li class="item" ng-repeat="account in accountList" ui-sref="transactionDetails({id: account.id, date: date})">
+					<span>{{account.account_name}}</span>
+					<span style="float: right; color: red;">{{account.amount}}</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="list card" ng-repeat="transaction in details.transactionList">
+<!-- item-avatar -->
+			<div class="item">
+				<h3>{{details.accountDetails.account_name}}</h3>
+			</div>
+
+			<div class="item item-body">
+				<p style="color: red;">
+					<span>{{transaction.transactiontype}}</span>
+					<span style="float: right;">{{transaction.transaction_date}}</span>
+				</p>
+				<ul class="list">
+					<li class="item" ng-repeat="record in transaction.transaction_record_list">
+						<div class="row">
+							<div class="col-60">
+								<span>{{record.account_name}}</span>
+							</div>
+							<div class="col-20">
+								<span>{{record.amount}}</span>
+							</div>
+							<div class="col-20">
+								<span ng-if="record.is_debit">Debit</span>
+								<span ng-if="!record.is_debit">Credit</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<p style="color: red;">
+					{{transaction.description}}
+				</p>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>
+
+<!-- class="subdued" -->

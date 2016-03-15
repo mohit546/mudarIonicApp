@@ -3,6 +3,8 @@ angular.module('mudraApp.controllers')
 	$log.debug('transactionDetailsCtrl is loaded');
 	$log.debug($stateParams);
 
+	$scope.details = {};
+
 	$scope.init = function(){
 		getTransactionRecord();
 	};
@@ -12,6 +14,12 @@ angular.module('mudraApp.controllers')
 		var dataPromis = networkService.getTransactionRecordRequest($stateParams.id, $stateParams.date);
 		dataPromis.then(function(result){
 			$log.debug(result);
+			if(!result.status){
+				$log.debug('error');
+			}else{
+				$scope.details.accountDetails = result.account_details;
+				$scope.details.transactionList = result.transactionList;
+			}
 		});
 	};
 
