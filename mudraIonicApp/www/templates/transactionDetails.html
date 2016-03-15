@@ -22,15 +22,15 @@
 				<ul class="list">
 					<li class="item" ng-repeat="record in transaction.transaction_record_list">
 						<div class="row">
-							<div class="col-60">
-								<span>{{record.account_name}}</span>
+							<div class="col-50">
+								<span style="font-size: 0.8em;">{{record.account_name}}</span>
 							</div>
-							<div class="col-20">
-								<span>{{record.amount}}</span>
+							<div class="col-25">
+								<span style="font-size: 0.8em;">{{record.amount}}</span>
 							</div>
-							<div class="col-20">
-								<span ng-if="record.is_debit">Debit</span>
-								<span ng-if="!record.is_debit">Credit</span>
+							<div class="col-25">
+								<span style="font-size: 0.8em;" ng-if="record.is_debit">Debit</span>
+								<span style="font-size: 0.8em;" ng-if="!record.is_debit">Credit</span>
 							</div>
 						</div>
 					</li>

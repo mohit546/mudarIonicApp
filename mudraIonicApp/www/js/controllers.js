@@ -20,9 +20,8 @@ angular.module('mudraApp.controllers', [])
 		$scope.modal.show();
 	};
 
-	// $scope.doLogin = function() {
-		console.log('doLogin doLogin doLogin doLogin ');
-		// var dataPromis = networkService.loginRequest($scope.loginData.username, $scope.loginData.password);
+	$scope.doLogin = function() {
+		var dataPromis = networkService.loginRequest($scope.loginData.username, $scope.loginData.password);
 		var dataPromis = networkService.loginRequest('user41', 'mohit@123');
 		dataPromis.then(function(result){
 			console.log(result);
@@ -33,6 +32,6 @@ angular.module('mudraApp.controllers', [])
 				$state.go('myAccount');
 			}
 		});
-	// };
+	};
 
 });
