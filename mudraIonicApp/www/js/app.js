@@ -1,4 +1,4 @@
-angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'])
+angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services', 'ionic-datepicker'])
 
 .run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
