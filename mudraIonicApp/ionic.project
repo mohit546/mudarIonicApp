@@ -4,7 +4,7 @@
   "proxies": [
     {
       "path": "/mudra",
-      "proxyUrl": "http://192.168.1.124:8000"
+      "proxyUrl": "http://192.168.1.124:8888"
     }
   ]
 }
