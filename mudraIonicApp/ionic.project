@@ -2,7 +2,6 @@
   "name": "mudraIonicApp",
   "app_id": "2f3c15e1",
   "proxies": [
-
     {
       "path": "/mudra",
       "proxyUrl": "http://mudra.mahasoftball.webfactional.com"

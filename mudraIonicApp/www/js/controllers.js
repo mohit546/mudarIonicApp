@@ -21,8 +21,8 @@ angular.module('mudraApp.controllers', [])
 	};
 
 	$scope.doLogin = function() {
+		// var dataPromis = networkService.loginRequest($scope.loginData.username, $scope.loginData.password);
 		var dataPromis = networkService.loginRequest($scope.loginData.username, $scope.loginData.password);
-		var dataPromis = networkService.loginRequest('nikhil', 'nikhil');
 		dataPromis.then(function(result){
 			console.log(result);
 			if(!result.status){
