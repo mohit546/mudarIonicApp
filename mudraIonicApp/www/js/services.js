@@ -21,11 +21,18 @@ angular.module('mudraApp.services', [])
 		});
 	};
 
+	var getTransactionRecordRequest = function(id, date){
+		return $http.post(mudraServer + '/show_transactions_of_single_account/', {account_id: id, start_date: date}).then(function(result){
+			return result.data;
+		});
+	};
+
 
 
 	return {
 		loginRequest : loginRequest,
 		getYearListRequest : getYearListRequest,
-		getAccountListRequest : getAccountListRequest
+		getAccountListRequest : getAccountListRequest,
+		getTransactionRecordRequest : getTransactionRecordRequest
 	};
 });

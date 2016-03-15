@@ -34,7 +34,7 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 	})
 
 	.state('accounts', {
-		url: '/accounts',
+		url: '/accounts/:date',
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/accounts.html',
@@ -66,6 +66,14 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/activities.html',
+			}
+		}
+	})
+	.state('transactionDetails', {
+		url: '/transactionDetails/:id/:date',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/transactionDetails.html',
 			}
 		}
 	});

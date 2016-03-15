@@ -3,9 +3,9 @@
 		<h1>Accounts</h1>
 
 		<ul class="list">
-			<li class="item" ng-repeat="account in accountList" ui-sref="accounts">
+			<li class="item" ng-repeat="account in accountList" ui-sref="transactionDetails({id: account.id, date: date})">
 				<span>{{account.account_name}}</span>
-				<span style="float: right;">{{account.amount}}</span>
+				<span style="float: right; color: red;">{{account.amount}}</span>
 			</li>
 		</ul>
 	</ion-content>
