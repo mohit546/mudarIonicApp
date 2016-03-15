@@ -1,7 +1,7 @@
 {
   "name": "mudraIonicApp",
-  "app_id": "",
-   "proxies": [
+  "app_id": "2f3c15e1",
+  "proxies": [
     {
       "path": "/mudra",
       "proxyUrl": "http://192.168.1.124:8000"
