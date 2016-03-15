@@ -20,7 +20,7 @@
 			<div class="item item-body">
 				<p style="color: red;">
 					<span>{{transaction.transactiontype}}</span>
-					<span style="float: right;">{{transaction.transaction_date}}</span>
+					<span style="float: right;">{{transaction.transaction_date | date: 'dd/MMM/yyyy'}}</span>
 				</p>
 				<ul class="list">
 					<li class="item" ng-repeat="record in transaction.transaction_record_list">

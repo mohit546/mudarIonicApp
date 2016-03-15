@@ -3,6 +3,10 @@ angular.module('mudraApp.controllers')
 	$log.debug('transactionDetailsCtrl is loaded');
 	$log.debug($stateParams);
 
+	$scope.date = null;
+	if($stateParams.date.length > 0)
+		$scope.date = $stateParams.date;
+
 	$scope.details = {};
 
 	$scope.init = function(){
@@ -11,7 +15,7 @@ angular.module('mudraApp.controllers')
 	$timeout($scope.init);
 
 	var getTransactionRecord = function(){
-		var dataPromis = networkService.getTransactionRecordRequest($stateParams.id, $stateParams.date);
+		var dataPromis = networkService.getTransactionRecordRequest($stateParams.id, $scope.date);
 		dataPromis.then(function(result){
 			$log.debug(result);
 			if(!result.status){
