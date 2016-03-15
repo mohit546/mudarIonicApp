@@ -74,6 +74,7 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		views: {
 			'menuContent': {
 				templateUrl: 'templates/transactionDetails.html',
+				controller: 'transactionDetailsCtrl'
 			}
 		}
 	});
