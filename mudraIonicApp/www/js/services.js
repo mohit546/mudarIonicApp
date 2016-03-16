@@ -27,12 +27,19 @@ angular.module('mudraApp.services', [])
 		});
 	};
 
+	var getTransactionModeListRequest = function(){
+		return $http.get(mudraServer + '/get_transactiontype_from_db/').then(function(result){
+			return result.data;
+		});
+	};
+
 
 
 	return {
 		loginRequest : loginRequest,
 		getYearListRequest : getYearListRequest,
 		getAccountListRequest : getAccountListRequest,
-		getTransactionRecordRequest : getTransactionRecordRequest
+		getTransactionRecordRequest : getTransactionRecordRequest,
+		getTransactionModeListRequest : getTransactionModeListRequest
 	};
 });

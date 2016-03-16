@@ -23,16 +23,6 @@ angular.module('mudraApp.controllers')
 		closeOnSelect: false
 	};
 
-	var datePickerCallback = function(val){
-		$log.debug(val);
-		if (typeof(val) === 'undefined') {
-			$log.debug('No date selected');
-		}else{
-			$scope.datepickerOptions.inputDate = new Date(val);
-			$log.debug('Selected date is : ', val);
-		}
-	};
-
 	$scope.transactionTypeOptions = [
 										{
 											type: 'credit',
@@ -44,5 +34,46 @@ angular.module('mudraApp.controllers')
 										}
 									];
 	selectedTransactionTypeOptions = {};
+
+	$scope.init = function(){
+		getTransactionModeList();
+		getAccountList();
+	};
+	$timeout($scope.init);
+
+	var getAccountList = function(){
+		var dataPromis = networkService.getAccountListRequest();
+		dataPromis.then(function(result){
+			$log.debug(result);
+			if(!result.status){
+				$log.debug(result.validation);
+			}else{
+				$scope.accountList = result.accountList;
+			}
+		});
+	};
+
+	var getTransactionModeList = function(){
+		var dataPromis = networkService.getTransactionModeListRequest();
+		dataPromis.then(function(result){
+			$log.debug(result);
+			if(!result.status){
+				$log.debug(result.validation);
+			}else{
+				$scope.transactionTypeList = result.TransactionTypeList;
+			}
+		});
+	};
+
+	var datePickerCallback = function(val){
+		$log.debug(val);
+		if (typeof(val) === 'undefined') {
+			$log.debug('No date selected');
+		}else{
+			$scope.datepickerOptions.inputDate = new Date(val);
+			$log.debug('Selected date is : ', val);
+		}
+	};
+
 
 });
