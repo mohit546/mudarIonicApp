@@ -16,13 +16,6 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 .config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 
-	// .state('app', {
-	// 	url: '/app',
-	// 	// abstract: true,
-	// 	// templateUrl: 'templates/login.html',
-	// 	controller: 'mudraAppCtrl'
-	// })
-
 	.state('myAccount', {
 		url: '/myAccount',
 		views: {
@@ -81,5 +74,5 @@ angular.module('mudraApp', ['ionic', 'mudraApp.controllers', 'mudraApp.services'
 		}
 	});
 
-	$urlRouterProvider.otherwise('/app');
+	// $urlRouterProvider.otherwise('/app');
 });
