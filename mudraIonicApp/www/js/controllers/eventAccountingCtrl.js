@@ -33,7 +33,6 @@ angular.module('mudraApp.controllers')
 											shortHand: 'd'
 										}
 									];
-	selectedTransactionTypeOptions = {};
 
 	$scope.init = function(){
 		getTransactionModeList();
@@ -72,6 +71,14 @@ angular.module('mudraApp.controllers')
 		}else{
 			$scope.datepickerOptions.inputDate = new Date(val);
 			$log.debug('Selected date is : ', val);
+		}
+	};
+
+	$scope.addEntry = function(mode, type, account){
+		if(mode != undefined && type != undefined && account != undefined){
+			$log.debug('good to go!!!');
+		}else{
+			$log.debug('Fill all Fields!!!');
 		}
 	};
 
